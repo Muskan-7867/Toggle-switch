@@ -1,0 +1,87 @@
+.toggle-switch-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.checkbox {
+  display: none;
+}
+
+.label {
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+  border-radius: 34px;
+}
+
+.label.light {
+  background-color: #ddd;
+}
+
+.label.dark {
+  background-color: #222;
+}
+
+.ball {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.ball.light {
+  transform: translateX(0);
+}
+
+.ball.dark {
+  transform: translateX(26px);
+}
+
+/* Adjust background images properties */
+body {
+  background-image: url('src/assets/light.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.centered-buttons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; 
+  margin-left: 1000px;
+}
+
+
+.interactive-button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+
+}
+
+
