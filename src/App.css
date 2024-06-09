@@ -1,3 +1,4 @@
+/* Toggle switch container */
 .toggle-switch-container {
   position: fixed;
   top: 20px;
@@ -5,6 +6,7 @@
   z-index: 999;
 }
 
+/* Toggle switch styles */
 .toggle-switch {
   position: relative;
   display: inline-block;
@@ -51,28 +53,34 @@
   transform: translateX(26px);
 }
 
-/* Adjust background images properties */
+/* Background image properties */
 body {
   background-image: url('src/assets/light.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
 }
+
+/* Center the buttons container */
 .centered-buttons-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; 
-  margin-left: 1000px;
+  height: 100vh;
 }
 
-
+/* Styles for the interactive buttons */
 .interactive-button {
   background-color: #4CAF50; /* Green */
   border: none;
   color: white;
   padding: 15px 32px;
-  align-items: center;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -81,7 +89,100 @@ body {
   cursor: pointer;
   border-radius: 8px;
   transition: background-color 0.3s ease;
-
 }
 
 
+
+/* Navigation styles */
+nav {
+  margin-bottom: 20px;
+}
+
+/* Center the list items */
+ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  margin: 0 10px;
+}
+
+/* Styles for the links */
+.nav-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #28a745; 
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-link:hover {
+  background-color: #218838; 
+  color: black;
+}
+
+
+
+/* Styles for the form container */
+.form-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  text-align: center;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Styles for form inputs */
+.form-container input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+/* Styles for the submit button */
+.form-container .submit-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.form-container .submit-button:hover {
+  background-color: #0056b3;
+}
+
+/* Additional styles for better user experience */
+.form-container input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.form-container .link {
+  display: block;
+  margin-top: 15px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.form-container .link:hover {
+  text-decoration: underline;
+}

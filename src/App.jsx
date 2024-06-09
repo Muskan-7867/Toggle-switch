@@ -1,52 +1,32 @@
-import React, { useState, useEffect } from 'react';
-import './App.css'; 
+import React from 'react';
+import Toggleswitch from './Toggleswitch';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import Signup from './Signup';
+import Signin from './Signin';
+import './App.css'; // Import the CSS file
 
 const App = () => {
-  // Retrieve theme preference from local storage or default to light
-  const savedTheme = localStorage.getItem('theme');
-  const [darkMode, setDarkMode] = useState(savedTheme === 'dark');
-
-  useEffect(() => {
-    // Check local storage for theme preference
-    const savedTheme = localStorage.getItem('theme');
-  
-    // Update theme based on saved preference
-    if (savedTheme === 'dark') {
-      document.body.style.backgroundImage = "url('src/assets/dark1.jpg')";
-    } else {
-      document.body.style.backgroundImage = "url('src/assets/light.jpg')";
-    }
-  }, []);
-
-  const toggleTheme = () => {
-    const newMode = !darkMode;
-    setDarkMode(newMode);
-    if (newMode) {
-      document.body.style.backgroundImage = "url('src/assets/dark1.jpg')";
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.body.style.backgroundImage = "url('src/assets/light.jpg')";
-      localStorage.setItem('theme', 'light');
-    }
-    // Display popup message
-    alert(`Theme has been set to ${newMode ? 'dark' : 'light'} mode.`);
-  };
-
   return (
-    <div className="container">
-      <div className="toggle-switch-container">
-        <div className="toggle-switch" onClick={toggleTheme}>
-          <input type="checkbox" className="checkbox" checked={darkMode} readOnly />
-          <label className={`label ${darkMode ? 'dark' : 'light'}`} htmlFor="checkbox">
-            <div className={`ball ${darkMode ? 'dark' : 'light'}`}></div>
-          </label>
-        </div>
+    <Router>
+      <div>
+        <Toggleswitch />
+        <nav>
+          <ul>
+            <li>
+              <Link to="/signup" className="nav-link">Sign Up</Link>
+            </li>
+            <li>
+              <Link to="/signin" className="nav-link">Sign In</Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Routes>
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/signin" element={<Signin />} />
+        </Routes>
       </div>
-      <div className="centered-buttons-container">
-        <button className="interactive-button sign-up-button" onClick={() => alert('Sign Up button clicked.')}>Sign Up</button>
-        <button className="interactive-button sign-in-button" onClick={() => alert('Sign In button clicked.')}>Sign In</button>
-      </div>
-    </div>
+    </Router>
   );
 };
 
